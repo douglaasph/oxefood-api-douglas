@@ -24,10 +24,6 @@ public class Produto extends EntidadeAuditavel {
     @ManyToOne
    private CategoriaProduto categoria;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-    
     @Column
     private String codigo;
 

@@ -19,10 +19,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Empresa extends EntidadeAuditavel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-
     @Column
     private String site;
 

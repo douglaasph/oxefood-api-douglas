@@ -2,6 +2,8 @@ package br.edu.ifpe.oxefood_api_douglas.api.cliente;
 
 import java.util.List;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,6 +19,11 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/cliente")
+@Tag(
+        name = "API Cliente",
+        description = "API responsável pelos servidos de cliente no sistema"
+)
+
 public class ClienteController {
 
     private final ClienteService clienteService;
@@ -25,6 +32,10 @@ public class ClienteController {
         this.clienteService = service;
     }
 
+    @Operation(
+            summary = "Serviço responsável por salvar um cliente no sistema.",
+            description = "Exemplo de descrição de um endpoint responsável por inserir um cliente no sistema."
+    )
     @PostMapping
     public ResponseEntity<Cliente> cadastrar(@RequestBody @Valid ClienteDTO dto) {
 
